@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <title>桌宠</title>
+</head>
+<body>
+  <div id="pet" class="pet">
+    <div id="bubble" class="bubble hidden"></div>
+    <img src="./assets/hello.png" alt="rem" class="pet-img" draggable="false">
+  </div>
+
+  <div id="settings-panel" class="settings-panel hidden">
+    <div class="settings-header">
+      <span>设置</span>
+      <button id="settings-close" class="settings-close" title="关闭">×</button>
+    </div>
+    <div class="settings-body">
+      <div class="settings-item">
+        <label>桌宠大小</label>
+        <div class="slider-row">
+          <span class="scale-label small">小</span>
+          <input type="range" id="size-slider" min="50" max="200" value="100" step="10">
+          <span class="scale-label large">大</span>
+        </div>
+        <div class="scale-value">
+          <span id="size-value">100%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>
