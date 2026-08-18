@@ -95,7 +95,7 @@ desk-pet/
 
 ## License
 
-ISC
+本项目采用 Apache License 2.0，详见 [LICENSE](./LICENSE) 文件。
 
 ---
 
@@ -196,4 +196,4 @@ desk-pet/
 
 ## License
 
-ISC
+This project is licensed under the Apache License 2.0. See the [LICENSE](./LICENSE) file for details.
