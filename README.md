@@ -1,4 +1,4 @@
-# DeskPet-rem 桌宠
+# DeskPet 桌宠
 
 一个基于 Electron 的桌面宠物应用，会常驻在你的屏幕角落，陪你摸鱼、卖萌、眨眼。
 
@@ -91,6 +91,107 @@ desk-pet/
 ├── build/
 │   └── logo.png         # 应用图标
 └── package.json         # 项目配置与打包脚本
+```
+
+## License
+
+ISC
+
+---
+
+# DeskPet Desktop Pet (English)
+
+A desktop pet application built on Electron that stays in the corner of your screen, keeping you company while you slack off, act cute, and blink.
+
+## Requirements
+
+| Dependency | Version |
+|------------|---------|
+| Node.js | `v24.19.0` |
+| npm | `11.17.0` |
+| Electron | `^43.3.0` (installed automatically via npm) |
+| OS | Windows 10/11 x64 |
+
+> Note: `electron-builder` packaging requires a Windows environment and .NET Framework.
+
+Check your current versions with:
+
+```bash
+node -v
+npm -v
+```
+
+## Installation
+
+```bash
+# Enter the project directory
+cd desk-pet
+
+# Install dependencies
+npm install
+```
+
+## Usage
+
+### Development
+
+```bash
+npm run dev
+# or
+npm start
+```
+
+After launching, the pet will appear in the bottom-right corner of the screen.
+
+### Packaging
+
+```bash
+# Package as a Windows installer (NSIS .exe)
+npm run build:win
+
+# Package to a directory only (no installer, for debugging)
+npm run pack
+```
+
+Build artifacts are output to the `release/` directory:
+
+- `release/win-unpacked/` — portable version directory
+- `release/deskpet-rem Setup x.x.x.exe` — NSIS installer
+
+## Features
+
+The pet is a cute rem character with the following abilities:
+
+- **Desktop Resident**: Transparent frameless window, always on top, no taskbar icon, visible across all workspaces
+- **Drag to Move**: Hold left-click to drag the pet anywhere on the screen
+- **Click Interaction**: Single-click the pet to make it bounce, randomly switching to "happy" or "wink" state with a speech bubble
+- **Multi-state Switching**: Switch between four moods via the right-click menu
+  - 👋 **Hello** — Greeting
+  - 😴 **Rest** — Resting
+  - 😄 **Happy** — Super happy
+  - 😉 **Wink** — Playful wink
+- **Idle Sleep**: Automatically enters rest state after 30 seconds of inactivity; resets the timer on mouse/keyboard activity
+- **Size Adjustment**: Right-click → Settings, adjust pet size (50%–200%) via slider; settings are saved automatically
+- **Single Instance**: Launching again will focus the existing window instead of opening multiple pets
+
+## Project Structure
+
+```
+desk-pet/
+├── main.js              # Electron main process (window, menu, IPC)
+├── preload.js           # Preload script (securely exposes API)
+├── src/
+│   ├── index.html       # Renderer process page
+│   ├── renderer.js      # Frontend logic (state, drag, bubble)
+│   ├── style.css        # Styles
+│   └── assets/         # Pet image assets
+│       ├── hello.png
+│       ├── happy.png
+│       ├── rest.png
+│       └── wink.png
+├── build/
+│   └── logo.png         # App icon
+└── package.json         # Project config and build scripts
 ```
 
 ## License
